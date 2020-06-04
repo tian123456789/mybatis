@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.tgr</groupId>
+	<artifactId>springboot-mybatis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot-mybatis</name>
+	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
+
+	<!--项目 属性 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- JDK编译版本 -->
+		<java.version>1.8</java.version>
+
+		<!-- 把thymeleaf升级为3.0以上 -->
+		<!-- <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version> -->
+
+		<!-- Failure to find org.thymeleaf:thymeleaf-spring5:jar: -->
+		<!-- 这里用的是org.springframework.boot下的spring-boot-starter-thymeleaf,使用<thymeleaf.version> 
+			做标签时可能与org.thymeleaf有冲突，导致包获取不正确 -->
+		<!-- <springboot-thymeleaf.version>2.1.6.RELEASE</springboot-thymeleaf.version> 
+			<thymeleaf-layout-dialect.version>1.4.0</thymeleaf-layout-dialect.version> -->
+	</properties>
+
+	<dependencies>
+		<!-- web支持,springMVC,Servlet支持等 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+		</dependency>
+		
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<!-- thymeleaf支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+			<!-- <version>2.2.2</version> -->
+		</dependency>
+
+		<!-- thymeleaf整合shiro -->
+		<!-- <dependency> <groupId>com.github.theborakompanioni</groupId> <artifactId>thymeleaf-extras-shiro</artifactId> 
+			<version>2.0.0</version> </dependency> -->
+
+		<!-- 验证码 -->
+		<!-- <dependency> <groupId>com.github.penggle</groupId> <artifactId>kaptcha</artifactId> 
+			<version>2.3.2</version> </dependency> -->
+
+		<!-- mysql驱动程序包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-loader</artifactId>
+		</dependency>
+
+		<!-- jdbc 测试lambda -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-jdbc</artifactId> 
+			</dependency> -->
+		<!-- jdbc 测试lambda -->
+
+		<!--mybatis 自动生成插件 -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.5</version>
+		</dependency>
+
+		<!--solr -->
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>7.1.0</version>
+		</dependency>
+
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<!-- spider -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<!-- <version>4.5.5</version> -->
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<!-- <version>3.4.0</version> -->
+		</dependency>
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>xsoup</artifactId>
+			<version>0.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.1.0</version>
+			<scope>compile</scope>
+		</dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sf.cglib/cglib-nodep-javadoc -->
+		<!-- <dependency>
+		    <groupId>net.sf.cglib</groupId>
+		    <artifactId>cglib-nodep-javadoc</artifactId>
+		    <version>2.2</version>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>3.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>core</artifactId>
+		    <version>3.3.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
+		
+		<dependency> 
+			<groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-data-redis</artifactId> 
+		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.13</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.60</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.15</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.15</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+        
+        <!-- <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.6</version>
+		</dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        
+        <dependency> 
+			<groupId>javax.websocket</groupId> 
+			<artifactId>javax.websocket-api</artifactId> 
+			<version>1.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+		
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Edgware.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<profiles>
+		<!--开发环境 -->
+		<profile>
+			<id>development</id>
+			<properties>
+				<build.profile.id>development</build.profile.id>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<!--临时环境 -->
+		<profile>
+			<id>temp</id>
+			<properties>
+				<build.profile.id>temp</build.profile.id>
+			</properties>
+		</profile>
+		<!--测试环境 -->
+		<profile>
+			<id>test</id>
+			<properties>
+				<build.profile.id>test</build.profile.id>
+			</properties>
+		</profile>
+		<!--生产环境 -->
+		<profile>
+			<id>production</id>
+			<properties>
+				<build.profile.id>production</build.profile.id>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	<build>
+		<finalName>tgr</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>static/fonts/**</exclude>
+					<exclude>static/assets/font-awesome/fonts/**</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>static/fonts/**</include>
+					<include>static/assets/font-awesome/fonts/**</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- (1) mybatis generator 自动生成代码插件 -->
+			<!-- mvn mybatis-generator:generate -->
+			<!-- mybatis-generator:generate -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>
+					<overwrite>true</overwrite>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimiter>-</delimiter>
+					</delimiters>
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+				</configuration>
+			</plugin>
+
+			<!-- loader -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.tgr.springbootmybatis.SpringbootMybatisApplication</mainClass>
+					<executable>true</executable>
+					<fork>true</fork><!-- 热部署 -->
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- 跳过测试 -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<!-- (2) mybatis generator 自动生成代码插件 -->
+			<!--<plugin> <groupId>org.mybatis.generator</groupId> <artifactId>mybatis-generator-maven-plugin</artifactId> 
+				<version>1.3.5</version> <configuration> <verbose>true</verbose> <overwrite>true</overwrite> 
+				</configuration> <executions> <execution> <id>Generate MyBatis Artifacts</id> 
+				<goals> <goal>generate</goal> </goals> </execution> </executions> <dependencies> 
+				<dependency> <groupId>org.mybatis.generator</groupId> <artifactId>mybatis-generator-core</artifactId> 
+				<version>1.3.5</version> </dependency> </dependencies> </plugin> -->
+		</plugins>
+	</build>
+
+</project>

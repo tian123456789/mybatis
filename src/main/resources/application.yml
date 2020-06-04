@@ -1,0 +1,112 @@
+server.address: 127.0.0.1
+server.port: 8001
+server.servlet.context-path: /
+
+# logger, to see logback-spring.xml
+logging.level: INFO
+logging.level.app: DEBUG
+
+#datasource
+
+spring.application.name: springboot-mybatis
+
+spring.datasource.driverClassName: com.mysql.jdbc.Driver
+spring.datasource.url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+spring.datasource.username: root
+spring.datasource.password: root
+
+#mybatis
+#core config File
+#start with /
+mybatis.config-location: classpath:/mybatis/mybatis-config.xml
+mybatis.mapper-locations: classpath:/mybatis/mapper/*.xml
+#show sql
+
+      
+logging.level.com.tgr.springbootmybatis.mapper: debug 
+#控制台输出json更美观
+spring.jackson.serialization: 
+  indent-output: true
+      
+
+#thymeleaf start
+spring.thymeleaf.mode: HTML5
+spring.thymeleaf.encoding: UTF-8
+spring.thymeleaf.servlet.content-type: text/html
+spring.thymeleaf.cache: false
+#thymeleaf end
+
+spring.devtools.restart.enabled: true #开启热部署
+
+
+solr.url: http://127.0.0.1:8080/solr
+solr.core: core1
+
+#禁用内置tomcat的不安全方法
+server: 
+  tomcat: 
+    port-header: HEAD,PUT,DELETE,OPTIONS,TRACE,COPY,SEARCH,PROPFIND
+
+tgr.name: tianguoruidemvc
+tgr.age: 18
+
+#redis配置
+spring.redis.host: 127.0.0.1
+spring.redis.port: 6379
+spring.redis.password: root
+spring.redis.database: 0
+#最大连接数量
+spring.redis.jedis.pool.max-active: 1000 
+#最大空闲数量
+spring.redis.jedis.pool.max-idle: 10 
+#最小空闲数量
+spring.redis.jedis.pool.min-idle: 0
+ #最大等待时间
+spring.redis.jedis.pool.max-wait: 1000ms
+
+
+spring.data.mongodb.host: 127.0.0.1
+spring.data.mongodb.port: 27017
+spring.data.mongodb.database: tgr
+spring.data.mongodb.username: tgr
+spring.data.mongodb.password: root
+
+file.store.path: G:\\tgr_files
+
+#数据查询权限密钥
+data.export.accessToken: abcd1234qwer
+#文件下载权限口令
+data.download.accessToken: wcptbtptp
+
+#nginx上下文目录，部分静态文件需要指定
+nginx.context.path: /         
+#${nginx.ContextPath}
+
+#spring.jpa.hibernate.ddl-auto: update
+#spring.jpa.show-sql: true
+
+
+
+
+
+
+#thymeleaf start
+#spring: 
+#  mvc: 
+#    static-path-pattern: /**
+#spring:
+#  resources:
+#    static-locations: classpath:/static/
+#  thymeleaf:
+#   prefix: classpath:/templates/
+#   suffix: .html
+#   mode: HTML5
+#   encoding: UTF-8
+#     force: true
+#   servlet:
+#     content-type: text/html
+#  cache: false
+#thymeleaf end
+
+workerId: 0
+datacenterId: 0

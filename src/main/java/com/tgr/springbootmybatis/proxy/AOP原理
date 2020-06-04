@@ -1,0 +1,38 @@
+JDK Proxy
+这是Java反射包java.lang.reflect提供的动态代理的方式，这种代理方式是完全基于接口的。
+当代理对象调用真实对象的需要增强的方法时，其会自动的跳转到代理对象关联的handler对象的invoke方法来进行调用。
+生成代理对象是用的Proxy类的静态方newProxyInstance
+newProxyInstance(ClassLoader loader,
+                                          Class<?>[] interfaces,
+                                          InvocationHandler h)
+			检查h 不为空，否则抛异常
+			获得与指定类装载器和一组接口相关的代理类类型对象
+			通过反射获取构造函数对象并生成代理类实例
+			* a cache of proxy classes
+    		private static final WeakCache<ClassLoader, Class<?>[], Class<?>>
+        		proxyClassCache = new WeakCache<>(new KeyFactory(), new ProxyClassFactory());缓存全局变量
+        		 class WeakCache<K, P, V> K为ClassLoader
+				 Class<?> cl = getProxyClass0(loader, intfs);
+				 	return proxyClassCache.get(loader, interfaces);
+				 		。。。一直看
+				 			//生成字节码
+							byte[] proxyClassFile = ProxyGenerator.generateProxyClass(proxyName, interfaces, accessFlags);
+				 final Constructor<?> cons = cl.getConstructor(constructorParams);
+				 cons.setAccessible(true)
+				 return cons.newInstance(new Object[]{h});
+				 
+				 到了这里，终于解答了：
+				subject.SayHello("jiankunking")这句话时，为什么会自动调用InvocationHandlerImpl的invoke方法？
+				因为JDK生成的最终真正的代理类，它继承自Proxy并实现了我们定义的Subject接口，
+				在实现Subject接口方法的内部，通过反射调用了InvocationHandlerImpl的invoke方法。
+				包含生成本地class文件的demo：
+				http://download.csdn.net/detail/xunzaosiyecao/9597474
+				https://github.com/JianKunKing/DynamicProxyDemo
+				通过分析代码可以看出Java 动态代理，具体有如下四步骤：
+				
+				通过实现 InvocationHandler 接口创建自己的调用处理器；
+				通过为 Proxy 类指定 ClassLoader 对象和一组 interface 来创建动态代理类；
+				通过反射机制获得动态代理类的构造函数，其唯一参数类型是调用处理器接口类型；
+				通过构造函数创建动态代理类实例，构造时调用处理器对象作为参数被传入。
+Cglib代理
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据查看器</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/asserts/layui/css/layui.css}">
+</head>
+<body style="padding-left: 30px; padding-top: 10px;padding-right: 30px;">
+<div>
+    <fieldset>
+        <legend>条件区域</legend>
+        <div>
+            <form id="queryForm" class="layui-form">
+                <input type="hidden" id="nginxContextPath" name="nginxContextPath" th:value="${nginxContextPath}">
+                <input type="hidden" id="schema" name="schema" th:value="${schema}">
+                <input type="hidden" id="access" name="access" th:value="${#httpServletRequest.getParameter('access')}">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">选择表：</label>
+                        <div class="layui-input-inline">
+                            <select id="tableName" lay-filter="tableName">
+                                <option value="">请选择</option>
+                                <option th:each="item : ${tableNames}" th:value="${item.name}"
+                                        th:text="${item.name+'-->'+item.comment}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">查询条件：</label>
+                        <input id="condition" name="condition" style="width: 450px;" class="layui-input"
+                               placeholder="如name='张三'，多个条件用'and'拼接">
+                    </div>
+
+                    <div class="layui-inline">
+                        <input type="button" th:value="查询" id="queryBtn" class="layui-btn">
+                        <input type="button" th:value="导出" id="exportBtn" class="layui-btn layui-btn-normal">
+                        <input type="button" th:value="导入抽奖企业" id="importBtn" class="layui-btn layui-btn-warm">
+                        <span id="countResult" style="color: red"></span>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>数据区域</legend>
+        <table id="example" lay-filter="test"></table>
+    </fieldset>
+</div>
+<script type="text/javascript" th:src="@{http://code.jquery.com/jquery-1.10.2.min.js}"></script>
+<script th:src="@{/asserts/layui/layui.js}"></script>
+<script th:src="@{/asserts/js/index.js}"></script>
+<script type="application/javascript">
+
+
+    function addQueryCondition() {
+        var param = $('#queryForm').serializeObject();
+        var tableName = $("#tableName").val();
+        var schema = $("#schema").val();
+        param.tableName = tableName;
+        param.schema = schema;
+        return param;
+    }
+
+</script>
+
+</body>
+<div id="importDiv" style="display: none;">
+    <form id="importForm" class="layui-form" style="padding: 10px;">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <button type="button" class="layui-btn" id="uploadBtn">
+                    <i class="layui-icon">&#xe67c;</i>选择上传Excel
+                </button>
+            </div>
+        </div>
+        <ul id="importResult"></ul>
+    </form>
+
+</div>
+</html>

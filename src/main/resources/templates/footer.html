@@ -1,0 +1,20 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <body>
+  
+  	<!-- 定义了一个名为的片段copy，我们可以使用其中一个th:include或th:replace属性
+  	轻松地在主页中包含这个片段： -->
+    <div th:fragment="footer">
+    	copy footer 2011 The Good Thymes Virtual Grocery
+    </div>
+    
+     <div th:fragment="footer-null">
+    	copy footer 2011 The Good Thymes Virtual Grocery
+    </div>
+  
+  </body>
+  
+</html>>

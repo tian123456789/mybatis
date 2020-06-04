@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tgr.springbootmybatis.mapper.AreaMapper" >
+  <resultMap id="BaseResultMap" type="com.tgr.springbootmybatis.entity.Area" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, name, level, parent_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from area
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from area
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tgr.springbootmybatis.entity.Area" >
+    insert into area (id, code, name, 
+      level, parent_id)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{level,jdbcType=TINYINT}, #{parentId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tgr.springbootmybatis.entity.Area" >
+    insert into area
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  <insert id="insertSelective2" parameterType="com.tgr.springbootmybatis.entity.Area" useGeneratedKeys="true" keyProperty="id">
+    insert into area
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.tgr.springbootmybatis.entity.Area" >
+    update area
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tgr.springbootmybatis.entity.Area" >
+    update area
+    set code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      level = #{level,jdbcType=TINYINT},
+      parent_id = #{parentId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectCodeAndLevel" resultMap="BaseResultMap">
+  	select * from `area` a where a.code = #{code} and a.level = #{level}
+  </select>
+</mapper>

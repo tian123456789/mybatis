@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/asserts/layui/css/layui.css}">
+</head>
+<body style="padding: 10px;">
+<form class="layui-form" onsubmit="return false;">
+    <input type="hidden" id="nginxContextPath" name="nginxContextPath" th:value="${nginxContextPath}">
+    <input type="hidden" id="serverPath" th:value="${serverPath}">
+    <input type="hidden" id="port" th:value="${port}">
+    <input type="hidden" id="currentFile" th:value="${path}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">选择类型：</label>
+        <div class="layui-input-inline">
+            <select id="logCatalog" lay-filter="logCatalog">
+                <option value="">请选择</option>
+             <!--   <option value="/app/pdyw/logs/adminapi.log">后台管理日志
+                </option>
+                <option value="/app/pdyw/logs/wxapi.log">
+                    小程序日志
+                </option>
+                <option value="/app/pdyw/logs/appapi.log">
+                    APP日志
+                </option> -->
+                <option value="E://workspace/tgr/springboot-mybatis/logs/springboot-mybatis.log">
+                    	日志
+                </option>
+                
+            </select>
+        </div>
+    </div>
+</form>
+<div id="log-container" style="height: 600px; overflow-y: scroll; background: #333; color: #aaa; padding: 20px;">
+    <div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{http://code.jquery.com/jquery-1.10.2.min.js}"></script>
+<script th:src="@{/asserts/layui/layui.js}"></script>
+
+<script type="application/javascript">
+    layui.use(['layer', 'form'], function () {
+        var form = layui.form;
+
+        var serverPath = $('#serverPath').val();
+        var port = $('#port').val();
+        var nginxContextPath = $('#nginxContextPath').val();
+        var websocket = null;
+
+        if ('WebSocket' in window) {
+            websocket = new WebSocket('ws://' + serverPath + ':' + port + nginxContextPath + '/log');
+        	//websocket = new WebSocket('ws://localhost:8001/myHandler');
+        } else {
+            alert("当前浏览器不支持WebSocket");
+        }
+
+        websocket.onopen = function(){
+            websocket.send($('#path').val());
+        }
+
+        websocket.onmessage = function (event) {
+            // 接收服务端的实时日志并添加到HTML页面中
+            $("#log-container div").append(event.data);
+            // 滚动条滚动到最低部
+            $("#log-container").scrollTop($("#log-container div").height() - $("#log-container").height());
+        };
+
+        form.on('select(logCatalog)', function (data) {
+            var filename = data.value;
+            if (filename) {
+                showLog(filename);
+            }
+        });
+
+        function showLog(filename) {
+            $("#log-container div").html('');
+            websocket.send(filename);
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

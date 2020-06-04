@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tgr.springbootmybatis.mapper.VideoMapper" >
+  <resultMap id="BaseResultMap" type="com.tgr.springbootmybatis.entity.Video" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="director" property="director" jdbcType="VARCHAR" />
+    <result column="actor" property="actor" jdbcType="VARCHAR" />
+    <result column="channel_id" property="channelId" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="products_id" property="productsId" jdbcType="VARCHAR" />
+    <result column="is_on" property="isOn" jdbcType="BIT" />
+    <result column="province_id" property="provinceId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="area_id" property="areaId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <resultMap id="VoMap" type="com.tgr.springbootmybatis.pojo.VideoVo">
+  	<id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="director" property="director" jdbcType="VARCHAR" />
+    <result column="actor" property="actor" jdbcType="VARCHAR" />
+    <result column="channel_id" property="channelId" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="products_id" property="productsId" jdbcType="VARCHAR" />
+    <result column="is_on" property="isOn" jdbcType="BIT" />
+    <result column="province_id" property="provinceId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="area_id" property="areaId" jdbcType="INTEGER" />
+    
+    <collection property="episodes" ofType="com.tgr.springbootmybatis.entity.Episode">
+    	<id column="eId" property="id" jdbcType="INTEGER" />
+    	<result column="vid" property="vid" jdbcType="INTEGER" />
+    	<result column="eName" property="name" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, name, url, area, year, description, director, actor, channel_id, product_id, 
+    products_id, is_on, province_id, city_id, area_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from video
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from video
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tgr.springbootmybatis.entity.Video" >
+    insert into video (id, name, url, 
+      area, year, description, 
+      director, actor, channel_id, 
+      product_id, products_id, is_on, 
+      province_id, city_id, area_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{year,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{director,jdbcType=VARCHAR}, #{actor,jdbcType=VARCHAR}, #{channelId,jdbcType=INTEGER}, 
+      #{productId,jdbcType=INTEGER}, #{productsId,jdbcType=VARCHAR}, #{isOn,jdbcType=BIT}, 
+      #{provinceId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{areaId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tgr.springbootmybatis.entity.Video" >
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="director != null" >
+        director,
+      </if>
+      <if test="actor != null" >
+        actor,
+      </if>
+      <if test="channelId != null" >
+        channel_id,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="productsId != null" >
+        products_id,
+      </if>
+      <if test="isOn != null" >
+        is_on,
+      </if>
+      <if test="provinceId != null" >
+        province_id,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="areaId != null" >
+        area_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="director != null" >
+        #{director,jdbcType=VARCHAR},
+      </if>
+      <if test="actor != null" >
+        #{actor,jdbcType=VARCHAR},
+      </if>
+      <if test="channelId != null" >
+        #{channelId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productsId != null" >
+        #{productsId,jdbcType=VARCHAR},
+      </if>
+      <if test="isOn != null" >
+        #{isOn,jdbcType=BIT},
+      </if>
+      <if test="provinceId != null" >
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tgr.springbootmybatis.entity.Video" >
+    update video
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="director != null" >
+        director = #{director,jdbcType=VARCHAR},
+      </if>
+      <if test="actor != null" >
+        actor = #{actor,jdbcType=VARCHAR},
+      </if>
+      <if test="channelId != null" >
+        channel_id = #{channelId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productsId != null" >
+        products_id = #{productsId,jdbcType=VARCHAR},
+      </if>
+      <if test="isOn != null" >
+        is_on = #{isOn,jdbcType=BIT},
+      </if>
+      <if test="provinceId != null" >
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tgr.springbootmybatis.entity.Video" >
+    update video
+    set name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      year = #{year,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      director = #{director,jdbcType=VARCHAR},
+      actor = #{actor,jdbcType=VARCHAR},
+      channel_id = #{channelId,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      products_id = #{productsId,jdbcType=VARCHAR},
+      is_on = #{isOn,jdbcType=BIT},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="findAll" resultMap="VoMap">
+  	select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid;
+  </select>
+ 
+</mapper>

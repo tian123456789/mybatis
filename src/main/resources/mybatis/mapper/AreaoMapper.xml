@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tgr.springbootmybatis.mapper.AreaoMapper" >
+  <resultMap id="BaseResultMap" type="com.tgr.springbootmybatis.entity.Areao" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="province_code" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="county_code" property="countyCode" jdbcType="VARCHAR" />
+    <result column="county_name" property="countyName" jdbcType="VARCHAR" />
+    <result column="street_code" property="streetCode" jdbcType="VARCHAR" />
+    <result column="street_name" property="streetName" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.tgr.springbootmybatis.entity.Areao" >
+    insert into areao (id, province_code, province_name, 
+      city_code, city_name, county_code, 
+      county_name, street_code, street_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{provinceCode,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, #{countyCode,jdbcType=VARCHAR}, 
+      #{countyName,jdbcType=VARCHAR}, #{streetCode,jdbcType=VARCHAR}, #{streetName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tgr.springbootmybatis.entity.Areao" >
+    insert into areao
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="provinceCode != null" >
+        province_code,
+      </if>
+      <if test="provinceName != null" >
+        province_name,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="cityName != null" >
+        city_name,
+      </if>
+      <if test="countyCode != null" >
+        county_code,
+      </if>
+      <if test="countyName != null" >
+        county_name,
+      </if>
+      <if test="streetCode != null" >
+        street_code,
+      </if>
+      <if test="streetName != null" >
+        street_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="countyCode != null" >
+        #{countyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="countyName != null" >
+        #{countyName,jdbcType=VARCHAR},
+      </if>
+      <if test="streetCode != null" >
+        #{streetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="streetName != null" >
+        #{streetName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <select id="selectProvinceCodes" resultMap="BaseResultMap" parameterType="String">
+  	select a.province_code,a.province_name FROM areao a group by a.province_code
+  </select>
+  
+  <select id="selectCityCodes" resultMap="BaseResultMap" parameterType="String">
+  	select a.city_code,a.city_name FROM areao a where a.province_code=#{provinceCode} group by a.province_code,a.city_code
+  </select>
+  
+  <select id="selectCountyCodesByProviceAndCity" resultMap="BaseResultMap">
+  	select a.county_code,a.county_name FROM areao a where a.city_code=#{cityCode} and a.province_code=#{proviceCode} group by a.city_code,a.county_code
+  </select>
+  
+  <select id="selectStreetCodesByCityAndCounty" resultMap="BaseResultMap">
+  	select a.street_code,a.street_name FROM areao a where a.county_code=#{countyCode} and a.city_code=#{cityCode} group by a.county_code,a.street_code
+  </select>
+  
+  <select id="selectAreaoById" resultMap="BaseResultMap" parameterType="int">
+  	select * from areao a where a.id = #{id}
+  </select>
+  
+</mapper>

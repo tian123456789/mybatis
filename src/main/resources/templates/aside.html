@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--sidebar start-->
+      <aside th:fragment="aside">
+          <div id="sidebar"  class="nav-collapse "
+          		th:with="action=${#httpServletRequest.getServletPath()}">
+             
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+                  <li class="active">
+                      <a th:class="${action == '/'} ? 'active' : ''" href="/">
+                          <i class="fa fa-rss-square"></i>
+                          <span>首页</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" th:class="${action.startsWith('/craw')}?'active' : '' ">
+                          <i class="fa fa-rss-square"></i>
+                          <span>采集管理</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li th:class="${action.startsWith('/craw/tasks')} ? 'active' : '' ">
+                          	<a  th:href="@{/craw1/task/youku}">采集任务</a>
+                          </li>
+                      </ul>
+                      <ul class="sub">
+						<li th:class="${action.startsWith('/crawl/video')} ? 'active' : ''">
+							<a th:href="@{/crawl/video}">单片采集</a>
+						</li>
+					  </ul>
+					  <ul class="sub">
+						 <li th:class="${action.startsWith('/crawl2/page')} ? 'active' : ''">
+							<a th:href="@{/crawl2/page}">单片采集2</a>
+						 </li>
+					  </ul>
+                      
+                  </li>
+          		  <li class="sub-menu">
+						<a href="javascript:void();" th:class="${action.startsWith('/video')} ? 'active' : ''">
+							<i class="fa fa-film"></i>
+							<span>影片管理</span>
+						</a>
+						<ul class="sub">
+							<li
+								th:class="${action.startsWith('/video/videos') || action.startsWith('/video/videos') || action.startsWith('/video/crawltasks')} ? 'active' : ''">
+								<a th:href="@{/video/videos}">视频列表</a>
+							</li>
+							<!-- <li th:class="${action.startsWith('/video/grabs')} ? 'active' : ''">
+								<a th:href="@{/video/grabs}">第三方片库</a>
+							</li> -->
+						</ul>
+				   </li>
+				   
+				   <li class="sub-menu">
+						<a href="javascript:void();" th:class="${action.startsWith('/video')} ? 'active' : ''">
+							<i class="fa fa-film"></i>
+							<span>文件系统</span>
+						</a>
+						<ul class="sub">
+							<li
+								th:class="${action.startsWith('/data/index') || action.startsWith('/data/index') || action.startsWith('/data/index')} ? 'active' : ''">
+								<a th:href="@{/data/index}">文件列表</a>
+							</li>
+							<li
+								th:class="${action.startsWith('/data/log') || action.startsWith('/data/log') || action.startsWith('/data/log')} ? 'active' : ''">
+								<a th:href="@{/data/log}">日志列表</a>
+							</li>
+							<!-- <li th:class="${action.startsWith('/video/grabs')} ? 'active' : ''">
+								<a th:href="@{/video/grabs}">第三方片库</a>
+							</li> -->
+						</ul>
+				   </li>
+              </ul>
+              <!-- sidebar menu end-->
+</body>
+</html>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tgr.springbootmybatis.mapper.ArticlesMapper">
+  <resultMap id="BaseResultMap" type="com.tgr.springbootmybatis.entity.Articles">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="publishtime" jdbcType="VARCHAR" property="publishtime" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="peoples" jdbcType="INTEGER" property="peoples" />
+    <result column="c1" jdbcType="INTEGER" property="c1" />
+    <result column="c2" jdbcType="INTEGER" property="c2" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+    <result column="other2" jdbcType="VARCHAR" property="other2" />
+    <result column="other3" jdbcType="VARCHAR" property="other3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, publishtime, content, tag, peoples, c1, c2, other1, other2, other3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from articles
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from articles
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    insert into articles (id, title, publishtime, 
+      content, tag, peoples, 
+      c1, c2, other1, other2, 
+      other3)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{publishtime,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, #{peoples,jdbcType=INTEGER}, 
+      #{c1,jdbcType=INTEGER}, #{c2,jdbcType=INTEGER}, #{other1,jdbcType=VARCHAR}, #{other2,jdbcType=VARCHAR}, 
+      #{other3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    insert into articles
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="peoples != null">
+        peoples,
+      </if>
+      <if test="c1 != null">
+        c1,
+      </if>
+      <if test="c2 != null">
+        c2,
+      </if>
+      <if test="other1 != null">
+        other1,
+      </if>
+      <if test="other2 != null">
+        other2,
+      </if>
+      <if test="other3 != null">
+        other3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="peoples != null">
+        #{peoples,jdbcType=INTEGER},
+      </if>
+      <if test="c1 != null">
+        #{c1,jdbcType=INTEGER},
+      </if>
+      <if test="c2 != null">
+        #{c2,jdbcType=INTEGER},
+      </if>
+      <if test="other1 != null">
+        #{other1,jdbcType=VARCHAR},
+      </if>
+      <if test="other2 != null">
+        #{other2,jdbcType=VARCHAR},
+      </if>
+      <if test="other3 != null">
+        #{other3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    update articles
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        publishtime = #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="peoples != null">
+        peoples = #{peoples,jdbcType=INTEGER},
+      </if>
+      <if test="c1 != null">
+        c1 = #{c1,jdbcType=INTEGER},
+      </if>
+      <if test="c2 != null">
+        c2 = #{c2,jdbcType=INTEGER},
+      </if>
+      <if test="other1 != null">
+        other1 = #{other1,jdbcType=VARCHAR},
+      </if>
+      <if test="other2 != null">
+        other2 = #{other2,jdbcType=VARCHAR},
+      </if>
+      <if test="other3 != null">
+        other3 = #{other3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    update articles
+    set title = #{title,jdbcType=VARCHAR},
+      publishtime = #{publishtime,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      peoples = #{peoples,jdbcType=INTEGER},
+      c1 = #{c1,jdbcType=INTEGER},
+      c2 = #{c2,jdbcType=INTEGER},
+      other1 = #{other1,jdbcType=VARCHAR},
+      other2 = #{other2,jdbcType=VARCHAR},
+      other3 = #{other3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- <sql id="Base_Column_List">
+    id, title, publishtime, content, tag, peoples, c1, c2, other1, other2, other3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from articles
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from articles
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    insert into articles (id, title, publishtime, 
+      content, tag, peoples, 
+      c1, c2, other1, other2, 
+      other3)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{publishtime,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, #{peoples,jdbcType=INTEGER}, 
+      #{c1,jdbcType=INTEGER}, #{c2,jdbcType=INTEGER}, #{other1,jdbcType=VARCHAR}, #{other2,jdbcType=VARCHAR}, 
+      #{other3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    insert into articles
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="publishtime != null">
+        publishtime,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="peoples != null">
+        peoples,
+      </if>
+      <if test="c1 != null">
+        c1,
+      </if>
+      <if test="c2 != null">
+        c2,
+      </if>
+      <if test="other1 != null">
+        other1,
+      </if>
+      <if test="other2 != null">
+        other2,
+      </if>
+      <if test="other3 != null">
+        other3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="peoples != null">
+        #{peoples,jdbcType=INTEGER},
+      </if>
+      <if test="c1 != null">
+        #{c1,jdbcType=INTEGER},
+      </if>
+      <if test="c2 != null">
+        #{c2,jdbcType=INTEGER},
+      </if>
+      <if test="other1 != null">
+        #{other1,jdbcType=VARCHAR},
+      </if>
+      <if test="other2 != null">
+        #{other2,jdbcType=VARCHAR},
+      </if>
+      <if test="other3 != null">
+        #{other3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    update articles
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null">
+        publishtime = #{publishtime,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="peoples != null">
+        peoples = #{peoples,jdbcType=INTEGER},
+      </if>
+      <if test="c1 != null">
+        c1 = #{c1,jdbcType=INTEGER},
+      </if>
+      <if test="c2 != null">
+        c2 = #{c2,jdbcType=INTEGER},
+      </if>
+      <if test="other1 != null">
+        other1 = #{other1,jdbcType=VARCHAR},
+      </if>
+      <if test="other2 != null">
+        other2 = #{other2,jdbcType=VARCHAR},
+      </if>
+      <if test="other3 != null">
+        other3 = #{other3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tgr.springbootmybatis.entity.Articles">
+    update articles
+    set title = #{title,jdbcType=VARCHAR},
+      publishtime = #{publishtime,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      peoples = #{peoples,jdbcType=INTEGER},
+      c1 = #{c1,jdbcType=INTEGER},
+      c2 = #{c2,jdbcType=INTEGER},
+      other1 = #{other1,jdbcType=VARCHAR},
+      other2 = #{other2,jdbcType=VARCHAR},
+      other3 = #{other3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>大类列表</title>
+</head>
+<body style="text-align: center">
+
+<form method="post" action="/c1/save">
+<table>
+    <input type="hidden" name="id" th:value="${c1.id}">
+    <tr>
+        <td>name</td>
+        <td><input type="text" name="name" th:value="${c1.name}"></td>
+    </tr>
+    <tr>
+        <td>comm</td>
+        <td><input type="text" name="comm" th:value="${c1.comm}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: right;"><input type="submit" name="保存" style="width: 100px;height:25px;"></td>
+    </tr>
+</table>
+</form>
+<form method="post" action="/c1/fetch">
+<table>
+    <tr>
+        <td>指定网页地址</td>
+        <td><input type="text" name="url"></td>
+    </tr>
+    <tr>
+        <td>comm</td>
+        <td><input type="text" name="xpath" ></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: right;"><input type="submit" name="开爬" style="width: 100px;height:25px;"></td>
+    </tr>
+</table>
+</form>
+
+<table border="1px solid blue">
+    <tr>
+        <td>ID</td>
+        <td>名称</td>
+        <td>描述</td>
+        <td>修改</td>
+        <td>删除</td>
+    </tr>
+    <tr th:each="e,st : ${list}">
+        <td th:text="${e.id}"></td>
+        <td th:text="${e.name}"></td>
+        <td th:text="${e.comm}"></td>
+        <td>
+            <a th:href="@{/c1/edit(c1id=${e.id})}">修改</a>
+        </td>
+        <td>
+            <a th:href="@{/c1/delete(c1id=${e.id})}">删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>视频详情-影片管理</title>
+<script th:inline="javascript">
+/*<![CDATA[*/
+	function uploadFile(){
+	    var formData = new FormData();
+	
+	    formData.append("file",$('#file')[0].files[0]);
+	
+	    $.ajax({
+	        url:'/upload/file',
+	        dataType:'json',
+	        type:'POST',
+	        async: false,
+	        data: formData,
+	        processData : false, // 使数据不做处理
+	        contentType : false, // 不要设置Content-Type请求头
+	        success: function(data){
+	            console.log(data);
+	            if (data.status == 'ok') {
+	                alert('上传成功！');
+	            }
+	
+	        },
+	        error:function(response){
+	            console.log(response);
+	        }
+	    });
+	
+	}
+	
+	function uploadPic(){
+	    var formData = new FormData();
+	
+	    formData.append("file",$('#pic')[0].files[0]);
+	
+	    $.ajax({
+	        url:'/upload/pic',
+	        dataType:'json',
+	        type:'POST',
+	        async: false,
+	        data: formData,
+	        processData : false, // 使数据不做处理
+	        contentType : false, // 不要设置Content-Type请求头
+	        success: function(data){
+	            console.log(data);
+	            if (data.status == 'ok') {
+	                alert('上传成功！');
+	            }
+	
+	        },
+	        error:function(response){
+	            console.log(response);
+	        }
+	    });
+	
+	}
+
+/*]]>*/
+</script>
+</head>
+
+<body>
+	 <div layout:fragment="content">
+	 	<div th:include="tip::tip"></div>
+	 	<div class="row">
+		 	<div class="col-lg-12">
+		 		<section class="panel">
+		 			<header class="panel-heading">
+		 				<span th:text="|视频总数(总影片数: ${count})|"></span>
+		 				<a type="button" class="btn btn-success btn-xs"
+		 							th:href="@{/video/push_solr}">全部上架</a>
+		 			</header>
+		 			<form>
+						<div class="form-group">
+							<label for="file" class="col-sm-2 control-label">上传文件</label>
+							<div class="col-sm-10">
+								<input type="file" accept=".xlsx" id="file">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="import" class="col-sm-2 control-label">提交</label>
+							<div class="col-sm-10">
+								<input id="import" type="button" value="导入" onclick="uploadFile()" />
+							</div>
+						</div>
+
+					</form>
+					
+					<form>
+						<div class="form-group">
+							<label for="file" class="col-sm-2 control-label">上传图片</label>
+							<div class="col-sm-10">
+								<input type="file" id="pic">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="import" class="col-sm-2 control-label">提交</label>
+							<div class="col-sm-10">
+								<input id="import" type="button" value="导入" onclick="uploadPic()" />
+							</div>
+						</div>
+
+					</form>
+					
+					<div class="panel-body">
+		 				<section id="unseen">
+		 					<form th:action="@{/video/search}" method="post" class="form-line" style="margin-bottom: 16px;">
+		 						<div class="form-group">
+		 							<label>关键字</label>
+		 							<input type="text" class="form-controller input-sm" name="key" th:value="${key}">
+		 						</div>
+		 						<button type="submit" class="btn btn-success btn-xs">搜索</button>
+		 					</form>
+		 					<form role="form" th:action="@{/video/on}" method="post">
+		 						<table class="table table-bordered table-striped table-condensed">
+		 							<thead>
+		 								<tr>
+		 									<th>序号</th>
+											<th>视频名称</th>
+											<th>演员</th>
+											<th>导演</th>
+											<th>是否上架</th>
+											<th>频道</th>
+											<th>单片产品</th>
+											<th>年份</th>
+											<th>总集数</th>
+											<th>操作</th>
+		 								</tr>
+		 							</thead>
+		 							<tbody>
+		 								<tr th:each="video : ${videos}">
+		 									<td>
+		 										<label class="checkbox-inline">
+		 											<input type="checkbox" name="ids" th:value="${video.id}" />
+		 											<span th:text = "${video.id}"></span>
+		 										</label>
+		 									</td>
+		 									<td>
+		 										<a th:utext="${video.name}" th:href="${video.url}" target="_blank"></a>
+		 									</td>
+		 									<td th:text="${video.director}"></td>
+		 									<td th:text="${video.actor}"></td>
+		 									<td
+		 										th:text="${video.isOn} == false ? '未上架' : '上架'">
+		 									</td>
+		 									<td th:text="${video.channelId == null ? '' : video.channelId}"></td>
+		 									<td th:text="${video.productId == null ? '' : video.productId}"></td>
+		 									<td th:text="${video.year == null ? '' : video.year}"></td>
+		 									<td th:text="${video.episodes == null ? '无剧集' : video.episodes.size()}"></td>
+		 									<td>
+		 										<a type="button" class="btn btn-info btn-xs" th:href="|video/${video.id}|"
+		 											target="_blank">编辑</a>
+		 										<a th:if="${video.isOn} == false" type="button" class="btn btn-success btn-xs"
+		 											th:href="@{/video/on(id=${video.id})}">上架</a>
+		 										<a th:if="${video.isOn} == true" type="button" class="btn btn-success btn-xs"
+		 											th:href="@{/video/off(id=${video.id})}">下架</a>
+		 									</td>
+		 								</tr>
+		 							</tbody>
+		 						</table>
+		 						<div th:include="pages::pages"></div>
+		 					</form>
+		 				</section>
+		 			</div>
+		 		</section>
+		 	</div>	
+	 	</div>
+	 </div>
+
+</body>
+
+<script th:inline="javascript">
+	
+	
+</script>
+</html>

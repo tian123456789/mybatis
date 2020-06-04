@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<aside th:fragment="aside">
+		<div id="sidebar" class="nav-collapse" style="padding-bottom: 32px;"
+			th:with="action=${#httpServletRequest.getServletPath()}">
+			<ul class="sidebar-menu" id="nav-accordion">
+				<li>
+					<a th:class="${action == '/'} ? 'active' : ''" href="/">
+						<i class="fa fa-dashboard"></i>
+						<span>首页</span>
+					</a>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:;" th:class="${action.startsWith('/crawl')} ? 'active' : ''">
+						<i class="fa fa-rss-square"></i>
+						<span>采集管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/crawl/tasks')} ? 'active' : ''">
+							<a th:href="@{/crawl/tasks/youku}">采集任务</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/crawl/video')} ? 'active' : ''">
+							<a th:href="@{/crawl/video}">单片采集</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/crawl2/page')} ? 'active' : ''">
+							<a th:href="@{/crawl2/page}">单片采集2</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/video')} ? 'active' : ''">
+						<i class="fa fa-film"></i>
+						<span>影片管理</span>
+					</a>
+					<ul class="sub">
+						<li
+							th:class="${action.startsWith('/video/grabber') || action.startsWith('/video/viewgrabber') || action.startsWith('/video/crawltasks')} ? 'active' : ''">
+							<a th:href="@{/video/grabber}">视频采集</a>
+						</li>
+						<li th:class="${action.startsWith('/video/grabs')} ? 'active' : ''">
+							<a th:href="@{/video/grabs}">第三方片库</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/vip')} ? 'active' : ''">
+						<i class="fa fa-users"></i>
+						<span>会员管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/vip/rights')} ? 'active' : ''">
+							<a th:href="@{/vip/rights}">权益列表</a>
+						</li>
+						<li th:class="${action.startsWith('/vip/vips')} ? 'active' : ''">
+							<a th:href="@{/vip/vips}">会员列表</a>
+						</li>
+						<li th:class="${action.startsWith('/vip/vip_rights')} ? 'active' : ''">
+							<a th:href="@{/vip/vip_rights}">会员权益</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/user')} ? 'active' : ''">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<span>用户管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/user/users')} ? 'active' : ''">
+							<a th:href="@{/user/users}">用户列表</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/user/thrid_account')} ? 'active' : ''">
+							<a th:href="@{/user/thrid_account}">第三方账户列表</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/business')} ? 'active' : ''">
+						<i class="fa fa-tasks"></i>
+						<span>业务管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/business/channel')} ? 'active' : ''">
+							<a th:href="@{/business/channels}">频道管理</a>
+						</li>
+						<li th:class="${action.startsWith('/business/categor')} ? 'active' : ''">
+							<a th:href="@{/business/categories}">分类管理</a>
+						</li>
+						<li th:class="${action.startsWith('/business/product')} ? 'active' : ''">
+							<a th:href="@{/business/products}">影片产品</a>
+						</li>
+						<li th:class="${action.startsWith('/business/section')} ? 'active' : ''">
+							<a th:href="@{/business/sections}">栏目管理</a>
+						</li>
+						<li th:class="${action.startsWith('/business/special')} ? 'active' : ''">
+							<a th:href="@{/business/specials}">专题管理</a>
+						</li>
+						<li th:class="${action.startsWith('/business/hotvideo')} ? 'active' : ''">
+							<a th:href="@{/business/hotvideo}">热门影视管理</a>
+						</li>
+						<li th:class="${action.startsWith('/business/cdkey/list')} ? 'active' : ''">
+							<a th:href="@{/business/cdkey/list}">激活码管理</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/finance')} ? 'active' : ''">
+						<i class="fa fa-money"></i>
+						<span>财务管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/finance/order')} ? 'active' : ''">
+							<a th:href="@{/finance/orders}">订单记录</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/finance/purchase')} ? 'active' : ''">
+							<a th:href="@{/finance/purchase}">购买记录</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/ads') || action.startsWith('/share')} ? 'active' : ''">
+						<i class="fa fa-th"></i>
+						<span>广告管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/ads/carousels')} ? 'active' : ''">
+							<a th:href="@{/ads/carousels}">首页轮播图</a>
+						</li>
+						
+						<li th:class="${action.startsWith('/share/shareinfos')} ? 'active' : ''">
+							<a th:href="@{/share/shareinfos}">分享活动管理</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/shortvideo') || action.startsWith('/videoreview') || action.startsWith('/uploadvideo')} ? 'active' : ''">
+						<i class="fa fa-video-camera" aria-hidden="true"></i>
+						<span>视频管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/shortvideo')} ? 'active' : ''">
+							<a th:href="@{/shortvideo/sourcevideos}">短剧管理</a>
+						</li>
+						<li th:class="${action.startsWith('/videoreview')} ? 'active' : ''">
+							<a th:href="@{/videoreview}">影评管理</a>
+						</li>
+						<li th:class="${action.startsWith('/uploadvideo')} ? 'active' : ''">
+							<a th:href="@{/uploadvideo}">用户上传视频管理</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/sys')} ? 'active' : ''">
+						<i class="fa fa-cogs"></i>
+						<span>系统管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/sys/users')} ? 'active' : ''">
+							<a th:href="@{/sys/users}">管理员账号</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_logs')} ? 'active' : ''">
+							<a th:href="@{/sys/login_logs}">登录日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_sections')} ? 'active' : ''">
+							<a th:href="@{/sys/login_sections}">栏目操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_specials')} ? 'active' : ''">
+							<a th:href="@{/sys/login_specials}">专题操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_products')} ? 'active' : ''">
+							<a th:href="@{/sys/login_products}">产品操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_categorys')} ? 'active' : ''">
+							<a th:href="@{/sys/login_categorys}">分类操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_vips')} ? 'active' : ''">
+							<a th:href="@{/sys/login_vips}">Vip操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_videos')} ? 'active' : ''">
+							<a th:href="@{/sys/login_videos}">影视操作日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/login_channels')} ? 'active' : ''">
+							<a th:href="@{/sys/login_channels}">频道日志</a>
+						</li>
+						<li th:class="${action.startsWith('/sys/short_message')} ? 'active' : ''">
+							<a th:href="@{/sys/short_message}">短信日志</a>
+						</li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/message')} ? 'active' : ''">
+						<i class="fa fa-comment" aria-hidden="true"></i>
+						<span>消息管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/message/messages')} ? 'active' : ''">
+							<a th:href="@{/message/messages}">消息管理</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/app')} ? 'active' : ''">
+						<i class="fa fa-android"></i>
+						<span>App管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/app/iap')} ? 'active' : ''">
+							<a th:href="@{/app/iap}">iOS内购管理</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/app/appversion')} ? 'active' : ''">
+							<a th:href="@{/app/appversion}">版本号管理</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/app/feedback')} ? 'active' : ''">
+							<a th:href="@{/app/feedback}">App用户反馈管理</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/site')} ? 'active' : ''">
+						<i class="fa fa-android"></i>
+						<span>第三方网站管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/site/play_config')} ? 'active' : ''">
+							<a th:href="@{/site/play_configs}">播放配置</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/site/account')} ? 'active' : ''">
+							<a th:href="@{/site/account}">账号分配管理</a>
+						</li>
+					</ul>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/site/testconfigs')} ? 'active' : ''">
+							<a th:href="@{/site/testconfigs}">自动检测配置</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/wxapp')} ? 'active' : ''">
+						<i class="fa fa-android"></i>
+						<span>小程序管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/wxapp/wxvideo')} ? 'active' : ''">
+							<a th:href="@{/wxapp/wxvideo}">播放管理</a>
+						</li>
+						<li th:class="${action.startsWith('/wxapp/qrvideo')} ? 'active' : ''">
+							<a th:href="@{/wxapp/qrvideo}">扫码播放管理</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="sub-menu">
+					<a href="javascript:void();" th:class="${action.startsWith('/mina')} ? 'active' : ''">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<span>商城管理</span>
+					</a>
+					<ul class="sub">
+						<li th:class="${action.startsWith('/mina/goods/list')} ? 'active' : ''">
+							<a th:href="@{/mina/goods/list}">商品管理</a>
+						</li>
+						<li th:class="${action.startsWith('/mina/exchange/list')} ? 'active' : ''">
+							<a th:href="@{/mina/exchange/list}">交易管理</a>
+						</li>
+						<li th:class="${action.startsWith('/mina/exchange/opening/hours')} ? 'active' : ''">
+							<a th:href="@{/mina/exchange/opening/hours}">设置抢购时间</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</aside>
+</body>
+</html>

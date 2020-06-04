@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 配置映射文件 -->
+	<!-- <mappers> -->
+		<!-- 通过映射文件在编辑后类目录下的相对路径加载映射文件
+		resource:用来指定映射文件的相对路径 -->
+		<!-- <mapper resource="mapper/UserMapper.xml"/> -->
+	<!-- </mappers> -->
+	
+	<typeAliases>
+		<!-- <typeAlias type="com.tgr.springbootmybatis.entity.C1" alias="_C1"/>
+        <typeAlias type="com.tgr.springbootmybatis.entity.C2" alias="_C2"/>
+        <typeAlias type="com.tgr.springbootmybatis.entity.Article" alias="_Article"/> -->
+	</typeAliases>
+</configuration>

@@ -1,0 +1,458 @@
+2020-04-13 14:33:14 INFO o.s.b.StartupInfoLogger[50]: Starting SpringbootMybatisApplication on DESKTOP-BV9KA48 with PID 19792 (E:\workspace\tgr\springboot-mybatis\target\classes started by tgr in E:\workspace\tgr\springboot-mybatis)
+2020-04-13 14:33:14 DEBUG o.s.b.StartupInfoLogger[53]: Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE
+2020-04-13 14:33:14 INFO o.s.b.SpringApplication[659]: No active profile set, falling back to default profiles: default
+2020-04-13 14:33:14 INFO o.s.c.s.AbstractApplicationContext[590]: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7610c4f7: startup date [Mon Apr 13 14:33:14 CST 2020]; root of context hierarchy
+2020-04-13 14:33:15 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:33:15 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:33:15 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:33:15 INFO o.s.b.f.s.DefaultListableBeanFactory[824]: Overriding bean definition for bean 'accessFilter' with a different definition: replacing [Generic bean: class [com.tgr.springbootmybatis.file.export.filter.AccessFilter]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspace\tgr\springboot-mybatis\target\classes\com\tgr\springbootmybatis\file\export\filter\AccessFilter.class]] with [Root bean: class [org.springframework.boot.web.servlet.FilterRegistrationBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2020-04-13 14:33:15 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[328]: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1d352f81] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-13 14:33:16 INFO o.s.b.w.e.t.TomcatWebServer[91]: Tomcat initialized with port(s): 8001 (http)
+2020-04-13 14:33:16 INFO o.a.j.l.DirectJDKLog[180]: Initializing ProtocolHandler ["http-nio-127.0.0.1-8001"]
+2020-04-13 14:33:16 INFO o.a.j.l.DirectJDKLog[180]: Starting service [Tomcat]
+2020-04-13 14:33:16 INFO o.a.j.l.DirectJDKLog[180]: Starting Servlet Engine: Apache Tomcat/8.5.31
+2020-04-13 14:33:16 INFO o.a.j.l.DirectJDKLog[180]: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_40\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_40\jre\bin;C:/Program Files/Java/jdk1.8.0_212/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_212/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_212/bin/../jre/lib/amd64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_212\bin;C:\Program Files\Java\jdk1.8.0_212\jre\bin;D:\javaTool\maven\apache-maven-3.5.3\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MongoDB\Server\4.2\bin;D:\javaTool\Gradle\gradle-4.4.1\bin;C:\Users\tgr\AppData\Local\Microsoft\WindowsApps;G:\fiddler;C:\Users\tgr\AppData\Local\Microsoft\WindowsApps;C:\Users\tgr\AppData\Roaming\npm;D:\javaTool\sts3.9\sts-bundle\sts-3.9.0.RELEASE;;.]
+2020-04-13 14:33:16 INFO o.a.j.l.DirectJDKLog[180]: Initializing Spring embedded WebApplicationContext
+2020-04-13 14:33:16 INFO o.s.b.w.s.c.ServletWebServerApplicationContext[285]: Root WebApplicationContext: initialization completed in 1980 ms
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'accessFilter' to urls: [/export/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'antPathMatcherFilter' to urls: [/pathMatcher/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'corsFilter' to urls: [/*]
+2020-04-13 14:33:16 INFO o.s.b.w.s.ServletRegistrationBean[185]: Servlet dispatcherServlet mapped to [/]
+2020-04-13 14:33:16 INFO o.s.b.w.s.ServletRegistrationBean[185]: Servlet asyncServlet mapped to [/asyncServlet]
+2020-04-13 14:33:16 INFO c.t.s.f.e.f.AccessFilter[49]: 安全访问的URL:[//export/filesystem/download, //export/modifyDataById, //export/syslog]
+2020-04-13 14:33:17 INFO c.m.d.l.SLF4JLogger[71]: Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-13 14:33:17 INFO c.m.d.l.SLF4JLogger[71]: Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-04-13 14:33:17 INFO c.m.d.l.SLF4JLogger[71]: Opened connection [connectionId{localValue:1, serverValue:102}] to 127.0.0.1:27017
+2020-04-13 14:33:17 INFO c.m.d.l.SLF4JLogger[71]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1932521}
+2020-04-13 14:33:17 INFO c.m.d.l.SLF4JLogger[71]: Discovered cluster type of STANDALONE
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/myHandler/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2020-04-13 14:33:18 INFO o.s.s.c.ExecutorConfigurationSupport[171]: Initializing ExecutorService  'defaultSockJsTaskScheduler'
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[574]: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7610c4f7: startup date [Mon Apr 13 14:33:14 CST 2020]; root of context hierarchy
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in baseController
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in dashboardController
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in uploadController
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/exe],methods=[GET]}" onto public void com.tgr.springbootmybatis.controller.AreaController.exe()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/delete]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.delete(java.lang.Integer)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/save]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.save(com.tgr.springbootmybatis.entity.Dict_C1)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/list]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.all(org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/edit]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.edit(org.springframework.ui.Model,java.lang.Integer)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/cerateCollection]}" onto private void com.tgr.springbootmybatis.controller.DashboardController.createCollection()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/index]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.dashboard(com.tgr.springbootmybatis.entity.User,org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/111]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.dashboard(org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/login]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.login(com.tgr.springbootmybatis.entity.User,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/unAuth]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.unAuth()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/mogon]}" onto private java.lang.String com.tgr.springbootmybatis.controller.DashboardController.mogon()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/toLogin]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.toLogin()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/logout]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.logout()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/getDoc]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.getDoc(java.lang.String) throws org.json.JSONException
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/createDoc]}" onto private java.lang.String com.tgr.springbootmybatis.controller.DashboardController.createDoc()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/users/{id}]}" onto public com.tgr.springbootmybatis.entity.Users com.tgr.springbootmybatis.controller.MyUsersController.findById(java.lang.Integer)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/order/insert]}" onto public int com.tgr.springbootmybatis.controller.OrderController.insertOrderData()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/test],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.PathMatcherController.testPathMatcherFilter()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toList]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toList()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toAdd]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toAdd()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toUpdate]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toUpdate()
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/videos],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.list(org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/search],methods=[POST]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.search(java.lang.String,org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/push_solr],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.pushSolr(org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/data/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.controller.DataController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/data/log]}" onto public java.lang.String com.tgr.springbootmybatis.file.controller.DataController.log(org.springframework.ui.Model)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/upload/file],methods=[POST]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.lang.String> com.tgr.springbootmybatis.file.controller.UploadController.file(javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/upload/pic],methods=[POST]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.lang.String> com.tgr.springbootmybatis.file.controller.UploadController.pic(javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/exportExcel],produces=[application/vnd.ms-excel;charset=UTF-8]}" onto public org.springframework.web.servlet.ModelAndView com.tgr.springbootmybatis.file.export.controller.DataExportController.exportExcel(javax.servlet.http.HttpServletRequest,com.tgr.springbootmybatis.file.export.view.data.BaseDataExportView)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/initExcel]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.util.Set<java.lang.String>> com.tgr.springbootmybatis.file.export.controller.DataExportController.initExcel(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/queryDynamic]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.queryDynamic(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.DataExportController.viewPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/tableColumn]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.tableColumn(java.lang.String,java.lang.String)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/queryDb]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.queryDbDatas(javax.servlet.http.HttpServletRequest,com.tgr.springbootmybatis.file.util.PageVo,java.lang.String)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/modifyDataById]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.modifyDataById(javax.servlet.http.HttpServletRequest,java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.FileExportController.viewPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/syslog]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.FileExportController.viewDemoPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/getFileList]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.FileExportController.getFileList(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/download]}" onto public void com.tgr.springbootmybatis.file.export.controller.FileExportController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/pathMatcher] onto handler '/pathMatcher'
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:33:18 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in baseController
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in dashboardController
+2020-04-13 14:33:18 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in uploadController
+2020-04-13 14:33:18 WARN o.t.t.TemplateMode[150]: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-13 14:33:18 INFO o.s.b.a.w.s.WelcomePageHandlerMapping[61]: Adding welcome page template: index
+2020-04-13 14:33:19 INFO c.m.d.l.SLF4JLogger[71]: Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-13 14:33:19 INFO c.m.d.l.SLF4JLogger[71]: Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-04-13 14:33:20 INFO c.m.d.l.SLF4JLogger[71]: Opened connection [connectionId{localValue:2, serverValue:103}] to 127.0.0.1:27017
+2020-04-13 14:33:20 INFO c.m.d.l.SLF4JLogger[71]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7623417}
+2020-04-13 14:33:20 INFO c.m.d.l.SLF4JLogger[71]: Discovered cluster type of STANDALONE
+2020-04-13 14:33:20 INFO o.s.b.d.a.OptionalLiveReloadServer[57]: LiveReload server is running on port 35729
+2020-04-13 14:33:20 INFO o.s.w.s.s.s.ServerEndpointExporter[153]: Registering @ServerEndpoint class: class com.tgr.springbootmybatis.file.controller.websocket.LogWebSocketService
+2020-04-13 14:33:20 INFO o.s.j.e.MBeanExporter[433]: Registering beans for JMX exposure on startup
+2020-04-13 14:33:20 INFO o.s.j.e.MBeanExporter[895]: Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-13 14:33:20 INFO o.s.j.e.MBeanExporter[668]: Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2020-04-13 14:33:20 INFO o.s.c.s.DefaultLifecycleProcessor$LifecycleGroup[351]: Starting beans in phase 2147483647
+2020-04-13 14:33:20 INFO o.a.j.l.DirectJDKLog[180]: Starting ProtocolHandler ["http-nio-127.0.0.1-8001"]
+2020-04-13 14:33:20 INFO o.a.j.l.DirectJDKLog[180]: Using a shared selector for servlet write/read
+2020-04-13 14:33:20 INFO o.s.b.w.e.t.TomcatWebServer[206]: Tomcat started on port(s): 8001 (http) with context path ''
+2020-04-13 14:33:20 INFO o.s.b.StartupInfoLogger[59]: Started SpringbootMybatisApplication in 6.474 seconds (JVM running for 7.718)
+2020-04-13 14:33:21 WARN c.t.s.InitApplication$1[31]: OK, completed
+2020-04-13 14:34:27 INFO o.s.b.StartupInfoLogger[50]: Starting SpringbootMybatisApplication on DESKTOP-BV9KA48 with PID 19792 (E:\workspace\tgr\springboot-mybatis\target\classes started by tgr in E:\workspace\tgr\springboot-mybatis)
+2020-04-13 14:34:27 DEBUG o.s.b.StartupInfoLogger[53]: Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE
+2020-04-13 14:34:27 INFO o.s.b.SpringApplication[659]: No active profile set, falling back to default profiles: default
+2020-04-13 14:34:27 INFO o.s.c.s.AbstractApplicationContext[590]: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16168a93: startup date [Mon Apr 13 14:34:27 CST 2020]; root of context hierarchy
+2020-04-13 14:34:28 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:34:28 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:34:28 INFO o.s.d.r.c.RepositoryConfigurationDelegate[163]: Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-13 14:34:28 INFO o.s.b.f.s.DefaultListableBeanFactory[824]: Overriding bean definition for bean 'accessFilter' with a different definition: replacing [Generic bean: class [com.tgr.springbootmybatis.file.export.filter.AccessFilter]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\workspace\tgr\springboot-mybatis\target\classes\com\tgr\springbootmybatis\file\export\filter\AccessFilter.class]] with [Root bean: class [org.springframework.boot.web.servlet.FilterRegistrationBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2020-04-13 14:34:28 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[328]: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1d352f81] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-13 14:34:28 INFO o.s.b.w.e.t.TomcatWebServer[91]: Tomcat initialized with port(s): 8001 (http)
+2020-04-13 14:34:28 INFO o.a.j.l.DirectJDKLog[180]: Initializing ProtocolHandler ["http-nio-127.0.0.1-8001"]
+2020-04-13 14:34:28 INFO o.a.j.l.DirectJDKLog[180]: Starting service [Tomcat]
+2020-04-13 14:34:28 INFO o.a.j.l.DirectJDKLog[180]: Starting Servlet Engine: Apache Tomcat/8.5.31
+2020-04-13 14:34:28 INFO o.a.j.l.DirectJDKLog[180]: Initializing Spring embedded WebApplicationContext
+2020-04-13 14:34:28 INFO o.s.b.w.s.c.ServletWebServerApplicationContext[285]: Root WebApplicationContext: initialization completed in 1113 ms
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[244]: Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'accessFilter' to urls: [/export/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'antPathMatcherFilter' to urls: [/pathMatcher/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.AbstractFilterRegistrationBean[257]: Mapping filter: 'corsFilter' to urls: [/*]
+2020-04-13 14:34:28 INFO o.s.b.w.s.ServletRegistrationBean[185]: Servlet dispatcherServlet mapped to [/]
+2020-04-13 14:34:28 INFO o.s.b.w.s.ServletRegistrationBean[185]: Servlet asyncServlet mapped to [/asyncServlet]
+2020-04-13 14:34:28 INFO c.t.s.f.e.f.AccessFilter[49]: 安全访问的URL:[//export/filesystem/download, //export/modifyDataById, //export/syslog]
+2020-04-13 14:34:28 INFO c.m.d.l.SLF4JLogger[71]: Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-13 14:34:28 INFO c.m.d.l.SLF4JLogger[71]: Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-04-13 14:34:28 INFO c.m.d.l.SLF4JLogger[71]: Opened connection [connectionId{localValue:3, serverValue:104}] to 127.0.0.1:27017
+2020-04-13 14:34:28 INFO c.m.d.l.SLF4JLogger[71]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=609391}
+2020-04-13 14:34:28 INFO c.m.d.l.SLF4JLogger[71]: Discovered cluster type of STANDALONE
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/myHandler/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2020-04-13 14:34:29 INFO o.s.s.c.ExecutorConfigurationSupport[171]: Initializing ExecutorService  'defaultSockJsTaskScheduler'
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[574]: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16168a93: startup date [Mon Apr 13 14:34:27 CST 2020]; root of context hierarchy
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in baseController
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in dashboardController
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter[591]: Detected @ModelAttribute methods in uploadController
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/exe],methods=[GET]}" onto public void com.tgr.springbootmybatis.controller.AreaController.exe()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/delete]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.delete(java.lang.Integer)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/save]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.save(com.tgr.springbootmybatis.entity.Dict_C1)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/list]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.all(org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/c1/edit]}" onto public java.lang.String com.tgr.springbootmybatis.controller.C1Controller.edit(org.springframework.ui.Model,java.lang.Integer)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/cerateCollection]}" onto private void com.tgr.springbootmybatis.controller.DashboardController.createCollection()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/index]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.dashboard(com.tgr.springbootmybatis.entity.User,org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/111]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.dashboard(org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/login]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.login(com.tgr.springbootmybatis.entity.User,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/unAuth]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.unAuth()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/mogon]}" onto private java.lang.String com.tgr.springbootmybatis.controller.DashboardController.mogon()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/toLogin]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.toLogin()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/logout]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.logout()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/getDoc]}" onto public java.lang.String com.tgr.springbootmybatis.controller.DashboardController.getDoc(java.lang.String) throws org.json.JSONException
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/createDoc]}" onto private java.lang.String com.tgr.springbootmybatis.controller.DashboardController.createDoc()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/users/{id}]}" onto public com.tgr.springbootmybatis.entity.Users com.tgr.springbootmybatis.controller.MyUsersController.findById(java.lang.Integer)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/order/insert]}" onto public int com.tgr.springbootmybatis.controller.OrderController.insertOrderData()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/test],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.PathMatcherController.testPathMatcherFilter()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toList]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toList()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toAdd]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toAdd()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/product/toUpdate]}" onto public java.lang.String com.tgr.springbootmybatis.controller.ProductController.toUpdate()
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/videos],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.list(org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/search],methods=[POST]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.search(java.lang.String,org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/video/push_solr],methods=[GET]}" onto public java.lang.String com.tgr.springbootmybatis.controller.VideoController.pushSolr(org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/data/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.controller.DataController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/data/log]}" onto public java.lang.String com.tgr.springbootmybatis.file.controller.DataController.log(org.springframework.ui.Model)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/upload/file],methods=[POST]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.lang.String> com.tgr.springbootmybatis.file.controller.UploadController.file(javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/upload/pic],methods=[POST]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.lang.String> com.tgr.springbootmybatis.file.controller.UploadController.pic(javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/exportExcel],produces=[application/vnd.ms-excel;charset=UTF-8]}" onto public org.springframework.web.servlet.ModelAndView com.tgr.springbootmybatis.file.export.controller.DataExportController.exportExcel(javax.servlet.http.HttpServletRequest,com.tgr.springbootmybatis.file.export.view.data.BaseDataExportView)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/initExcel]}" onto public com.tgr.springbootmybatis.controller.ResponseResult<java.util.Set<java.lang.String>> com.tgr.springbootmybatis.file.export.controller.DataExportController.initExcel(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/queryDynamic]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.queryDynamic(javax.servlet.http.HttpServletRequest,java.lang.String)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.DataExportController.viewPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/tableColumn]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.tableColumn(java.lang.String,java.lang.String)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/queryDb]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.queryDbDatas(javax.servlet.http.HttpServletRequest,com.tgr.springbootmybatis.file.util.PageVo,java.lang.String)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/modifyDataById]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.DataExportController.modifyDataById(javax.servlet.http.HttpServletRequest,java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/index]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.FileExportController.viewPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/syslog]}" onto public java.lang.String com.tgr.springbootmybatis.file.export.controller.FileExportController.viewDemoPage(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/getFileList]}" onto public com.tgr.springbootmybatis.controller.ResponseResult com.tgr.springbootmybatis.file.export.controller.FileExportController.getFileList(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/export/filesystem/download]}" onto public void com.tgr.springbootmybatis.file.export.controller.FileExportController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry[547]: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/pathMatcher] onto handler '/pathMatcher'
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:34:29 INFO o.s.w.s.h.AbstractUrlHandlerMapping[373]: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in baseController
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in dashboardController
+2020-04-13 14:34:29 INFO o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver[288]: Detected @ExceptionHandler methods in uploadController
+2020-04-13 14:34:29 WARN o.t.t.TemplateMode[150]: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-13 14:34:29 INFO o.s.b.a.w.s.WelcomePageHandlerMapping[61]: Adding welcome page template: index
+2020-04-13 14:34:29 INFO c.m.d.l.SLF4JLogger[71]: Cluster created with settings {hosts=[127.0.0.1:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-13 14:34:29 INFO c.m.d.l.SLF4JLogger[71]: Adding discovered server 127.0.0.1:27017 to client view of cluster
+2020-04-13 14:34:29 INFO c.m.d.l.SLF4JLogger[71]: Opened connection [connectionId{localValue:4, serverValue:105}] to 127.0.0.1:27017
+2020-04-13 14:34:29 INFO c.m.d.l.SLF4JLogger[71]: Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=842202}
+2020-04-13 14:34:29 INFO c.m.d.l.SLF4JLogger[71]: Discovered cluster type of STANDALONE
+2020-04-13 14:34:29 INFO o.s.b.d.a.OptionalLiveReloadServer[57]: LiveReload server is running on port 35729
+2020-04-13 14:34:29 INFO o.s.w.s.s.s.ServerEndpointExporter[153]: Registering @ServerEndpoint class: class com.tgr.springbootmybatis.file.controller.websocket.LogWebSocketService
+2020-04-13 14:34:29 INFO o.s.j.e.MBeanExporter[433]: Registering beans for JMX exposure on startup
+2020-04-13 14:34:29 INFO o.s.j.e.MBeanExporter[895]: Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-13 14:34:29 INFO o.s.j.e.MBeanExporter[668]: Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2020-04-13 14:34:29 INFO o.s.c.s.DefaultLifecycleProcessor$LifecycleGroup[351]: Starting beans in phase 2147483647
+2020-04-13 14:34:29 INFO o.a.j.l.DirectJDKLog[180]: Starting ProtocolHandler ["http-nio-127.0.0.1-8001"]
+2020-04-13 14:34:29 INFO o.a.j.l.DirectJDKLog[180]: Using a shared selector for servlet write/read
+2020-04-13 14:34:29 INFO o.s.b.w.e.t.TomcatWebServer[206]: Tomcat started on port(s): 8001 (http) with context path ''
+2020-04-13 14:34:29 INFO o.s.b.StartupInfoLogger[59]: Started SpringbootMybatisApplication in 2.506 seconds (JVM running for 77.463)
+2020-04-13 14:34:29 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener[56]: Condition evaluation unchanged
+2020-04-13 14:34:30 WARN c.t.s.InitApplication$1[31]: OK, completed
+2020-04-13 14:34:46 INFO o.a.j.l.DirectJDKLog[180]: Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-13 14:34:46 INFO o.s.w.s.FrameworkServlet[494]: FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-13 14:34:46 INFO o.s.w.s.FrameworkServlet[509]: FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2020-04-13 14:34:51 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:34:51 INFO c.z.h.HikariDataSource[110]: HikariPool-1 - Starting...
+2020-04-13 14:34:51 INFO c.z.h.HikariDataSource[123]: HikariPool-1 - Start completed.
+2020-04-13 14:34:51 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:34:51 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:34:52 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:34:52 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@7df57c96, com.tgr.springbootmybatis.pojo.VideoVo@654eeb8d, com.tgr.springbootmybatis.pojo.VideoVo@12ac65ab, com.tgr.springbootmybatis.pojo.VideoVo@4d452bff, com.tgr.springbootmybatis.pojo.VideoVo@1b82ef0d, com.tgr.springbootmybatis.pojo.VideoVo@9027d73, com.tgr.springbootmybatis.pojo.VideoVo@7872d0c5, com.tgr.springbootmybatis.pojo.VideoVo@1c8c16e7, com.tgr.springbootmybatis.pojo.VideoVo@107a78fc, com.tgr.springbootmybatis.pojo.VideoVo@a096665, com.tgr.springbootmybatis.pojo.VideoVo@64136b19]
+2020-04-13 14:34:52 WARN n.n.u.t.d.DecoratorProcessor[72]: The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2020-04-13 14:34:52 WARN n.n.u.t.e.ExpressionProcessor[75]: Fragment expression "layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2020-04-13 14:34:57 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:34:57 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:34:57 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:34:57 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:34:57 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@28124c51, com.tgr.springbootmybatis.pojo.VideoVo@33908781, com.tgr.springbootmybatis.pojo.VideoVo@3f0b20ad, com.tgr.springbootmybatis.pojo.VideoVo@2ee586d4, com.tgr.springbootmybatis.pojo.VideoVo@142f279d, com.tgr.springbootmybatis.pojo.VideoVo@23b40616, com.tgr.springbootmybatis.pojo.VideoVo@455c4485, com.tgr.springbootmybatis.pojo.VideoVo@470da9dc, com.tgr.springbootmybatis.pojo.VideoVo@2a737d6f, com.tgr.springbootmybatis.pojo.VideoVo@29744a81, com.tgr.springbootmybatis.pojo.VideoVo@e2b4b46]
+2020-04-13 14:35:01 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:01 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:01 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:01 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:01 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@270f4fef, com.tgr.springbootmybatis.pojo.VideoVo@4b028b7c, com.tgr.springbootmybatis.pojo.VideoVo@501742c9, com.tgr.springbootmybatis.pojo.VideoVo@3cf49020, com.tgr.springbootmybatis.pojo.VideoVo@6159c066, com.tgr.springbootmybatis.pojo.VideoVo@3e5ffe5a, com.tgr.springbootmybatis.pojo.VideoVo@54b4f252, com.tgr.springbootmybatis.pojo.VideoVo@4cd90d74, com.tgr.springbootmybatis.pojo.VideoVo@632cbe79, com.tgr.springbootmybatis.pojo.VideoVo@22403168, com.tgr.springbootmybatis.pojo.VideoVo@51156110]
+2020-04-13 14:35:02 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:02 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@141ed4b5, com.tgr.springbootmybatis.pojo.VideoVo@2efca492, com.tgr.springbootmybatis.pojo.VideoVo@33336522, com.tgr.springbootmybatis.pojo.VideoVo@41d38fdf, com.tgr.springbootmybatis.pojo.VideoVo@238a402c, com.tgr.springbootmybatis.pojo.VideoVo@6819b8fb, com.tgr.springbootmybatis.pojo.VideoVo@40abcaaf, com.tgr.springbootmybatis.pojo.VideoVo@1ddb1812, com.tgr.springbootmybatis.pojo.VideoVo@6ca1a0a5, com.tgr.springbootmybatis.pojo.VideoVo@495a13aa, com.tgr.springbootmybatis.pojo.VideoVo@57ba569c]
+2020-04-13 14:35:03 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:03 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@16d20d87, com.tgr.springbootmybatis.pojo.VideoVo@28ab72ee, com.tgr.springbootmybatis.pojo.VideoVo@1827f2ad, com.tgr.springbootmybatis.pojo.VideoVo@bf2302f, com.tgr.springbootmybatis.pojo.VideoVo@dcabae3, com.tgr.springbootmybatis.pojo.VideoVo@7e0595b6, com.tgr.springbootmybatis.pojo.VideoVo@5990b241, com.tgr.springbootmybatis.pojo.VideoVo@43798214, com.tgr.springbootmybatis.pojo.VideoVo@1bbc253a, com.tgr.springbootmybatis.pojo.VideoVo@4946abde, com.tgr.springbootmybatis.pojo.VideoVo@15981a0d]
+2020-04-13 14:35:04 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:04 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@6bc0437f, com.tgr.springbootmybatis.pojo.VideoVo@26c83420, com.tgr.springbootmybatis.pojo.VideoVo@1adcf5bb, com.tgr.springbootmybatis.pojo.VideoVo@26a280b7, com.tgr.springbootmybatis.pojo.VideoVo@4f90f4a7, com.tgr.springbootmybatis.pojo.VideoVo@281ea041, com.tgr.springbootmybatis.pojo.VideoVo@5512e9d4, com.tgr.springbootmybatis.pojo.VideoVo@67076cf9, com.tgr.springbootmybatis.pojo.VideoVo@2ffa9972, com.tgr.springbootmybatis.pojo.VideoVo@72bb3864, com.tgr.springbootmybatis.pojo.VideoVo@30a533ae]
+2020-04-13 14:35:04 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:04 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@1385d2ae, com.tgr.springbootmybatis.pojo.VideoVo@384374cd, com.tgr.springbootmybatis.pojo.VideoVo@1929068a, com.tgr.springbootmybatis.pojo.VideoVo@3ed36c51, com.tgr.springbootmybatis.pojo.VideoVo@3fec987, com.tgr.springbootmybatis.pojo.VideoVo@20b82029, com.tgr.springbootmybatis.pojo.VideoVo@71f46fe2, com.tgr.springbootmybatis.pojo.VideoVo@54603469, com.tgr.springbootmybatis.pojo.VideoVo@21a77d93, com.tgr.springbootmybatis.pojo.VideoVo@40ffa8e6, com.tgr.springbootmybatis.pojo.VideoVo@12a64464]
+2020-04-13 14:35:05 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:05 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@54ecff4e, com.tgr.springbootmybatis.pojo.VideoVo@2203c830, com.tgr.springbootmybatis.pojo.VideoVo@1cb5055e, com.tgr.springbootmybatis.pojo.VideoVo@11056a21, com.tgr.springbootmybatis.pojo.VideoVo@2220e1c0, com.tgr.springbootmybatis.pojo.VideoVo@1edefffc, com.tgr.springbootmybatis.pojo.VideoVo@2af5968c, com.tgr.springbootmybatis.pojo.VideoVo@101bb591, com.tgr.springbootmybatis.pojo.VideoVo@359078b3, com.tgr.springbootmybatis.pojo.VideoVo@5c5850e2, com.tgr.springbootmybatis.pojo.VideoVo@5a1fec13]
+2020-04-13 14:35:05 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:05 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:05 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@6b5812ce, com.tgr.springbootmybatis.pojo.VideoVo@46b4428e, com.tgr.springbootmybatis.pojo.VideoVo@419c4603, com.tgr.springbootmybatis.pojo.VideoVo@62446519, com.tgr.springbootmybatis.pojo.VideoVo@4921d5fd, com.tgr.springbootmybatis.pojo.VideoVo@2d654e65, com.tgr.springbootmybatis.pojo.VideoVo@eeaa994, com.tgr.springbootmybatis.pojo.VideoVo@4f4779fd, com.tgr.springbootmybatis.pojo.VideoVo@88ec3d5, com.tgr.springbootmybatis.pojo.VideoVo@f1fb2c7, com.tgr.springbootmybatis.pojo.VideoVo@54620cb9]
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@9f87e70, com.tgr.springbootmybatis.pojo.VideoVo@33763371, com.tgr.springbootmybatis.pojo.VideoVo@4ae8d230, com.tgr.springbootmybatis.pojo.VideoVo@4f147eef, com.tgr.springbootmybatis.pojo.VideoVo@5559283, com.tgr.springbootmybatis.pojo.VideoVo@7bad4e3, com.tgr.springbootmybatis.pojo.VideoVo@b4fef76, com.tgr.springbootmybatis.pojo.VideoVo@67c00bf6, com.tgr.springbootmybatis.pojo.VideoVo@4e284c07, com.tgr.springbootmybatis.pojo.VideoVo@1f6494ed, com.tgr.springbootmybatis.pojo.VideoVo@6b24fc28]
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@b10b8d1, com.tgr.springbootmybatis.pojo.VideoVo@7d74280f, com.tgr.springbootmybatis.pojo.VideoVo@737cafe1, com.tgr.springbootmybatis.pojo.VideoVo@2cdd9edb, com.tgr.springbootmybatis.pojo.VideoVo@22057da1, com.tgr.springbootmybatis.pojo.VideoVo@7eed1dbe, com.tgr.springbootmybatis.pojo.VideoVo@6878a625, com.tgr.springbootmybatis.pojo.VideoVo@2893c6b7, com.tgr.springbootmybatis.pojo.VideoVo@21724e71, com.tgr.springbootmybatis.pojo.VideoVo@37e4b70c, com.tgr.springbootmybatis.pojo.VideoVo@1a00765b]
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:06 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:06 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@12d2fa17, com.tgr.springbootmybatis.pojo.VideoVo@320e0101, com.tgr.springbootmybatis.pojo.VideoVo@2a868a3e, com.tgr.springbootmybatis.pojo.VideoVo@2669bf59, com.tgr.springbootmybatis.pojo.VideoVo@236efbc1, com.tgr.springbootmybatis.pojo.VideoVo@61aaf0a4, com.tgr.springbootmybatis.pojo.VideoVo@7f6341d5, com.tgr.springbootmybatis.pojo.VideoVo@149bba17, com.tgr.springbootmybatis.pojo.VideoVo@407febb6, com.tgr.springbootmybatis.pojo.VideoVo@76e60ccd, com.tgr.springbootmybatis.pojo.VideoVo@136e862d]
+2020-04-13 14:35:07 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:35:07 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:35:07 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:35:07 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:35:07 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@5110063, com.tgr.springbootmybatis.pojo.VideoVo@4b4ad0f3, com.tgr.springbootmybatis.pojo.VideoVo@3a22cc1f, com.tgr.springbootmybatis.pojo.VideoVo@2751ea6, com.tgr.springbootmybatis.pojo.VideoVo@f6a0493, com.tgr.springbootmybatis.pojo.VideoVo@12ba90c5, com.tgr.springbootmybatis.pojo.VideoVo@3e54f4b9, com.tgr.springbootmybatis.pojo.VideoVo@14fe5dfb, com.tgr.springbootmybatis.pojo.VideoVo@4b6f8d6b, com.tgr.springbootmybatis.pojo.VideoVo@d15107b, com.tgr.springbootmybatis.pojo.VideoVo@147dcc5c]
+2020-04-13 14:38:48 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:48 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:48 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:48 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:48 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@4d684869, com.tgr.springbootmybatis.pojo.VideoVo@5a1b4283, com.tgr.springbootmybatis.pojo.VideoVo@152287f, com.tgr.springbootmybatis.pojo.VideoVo@51f0fce2, com.tgr.springbootmybatis.pojo.VideoVo@5ed4cdb5, com.tgr.springbootmybatis.pojo.VideoVo@5edb83b6, com.tgr.springbootmybatis.pojo.VideoVo@4e5a59c2, com.tgr.springbootmybatis.pojo.VideoVo@181bab07, com.tgr.springbootmybatis.pojo.VideoVo@60da74d4, com.tgr.springbootmybatis.pojo.VideoVo@621e8d4a, com.tgr.springbootmybatis.pojo.VideoVo@7e165c82]
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@3fd6837c, com.tgr.springbootmybatis.pojo.VideoVo@77d0aa3, com.tgr.springbootmybatis.pojo.VideoVo@4ef8dda0, com.tgr.springbootmybatis.pojo.VideoVo@2c5e63ca, com.tgr.springbootmybatis.pojo.VideoVo@2718c85e, com.tgr.springbootmybatis.pojo.VideoVo@485fe60c, com.tgr.springbootmybatis.pojo.VideoVo@4042377a, com.tgr.springbootmybatis.pojo.VideoVo@1fdd5c8b, com.tgr.springbootmybatis.pojo.VideoVo@7ee63d16, com.tgr.springbootmybatis.pojo.VideoVo@49bedb40, com.tgr.springbootmybatis.pojo.VideoVo@1896ccea]
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@2dc569b0, com.tgr.springbootmybatis.pojo.VideoVo@71db2293, com.tgr.springbootmybatis.pojo.VideoVo@581b90e5, com.tgr.springbootmybatis.pojo.VideoVo@13076073, com.tgr.springbootmybatis.pojo.VideoVo@1589134a, com.tgr.springbootmybatis.pojo.VideoVo@3d6e74d2, com.tgr.springbootmybatis.pojo.VideoVo@39764722, com.tgr.springbootmybatis.pojo.VideoVo@11dabc87, com.tgr.springbootmybatis.pojo.VideoVo@4c14feb5, com.tgr.springbootmybatis.pojo.VideoVo@212db01, com.tgr.springbootmybatis.pojo.VideoVo@9d6d336]
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:49 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:49 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@15e9fe91, com.tgr.springbootmybatis.pojo.VideoVo@20392ee7, com.tgr.springbootmybatis.pojo.VideoVo@2794df89, com.tgr.springbootmybatis.pojo.VideoVo@2d5a1962, com.tgr.springbootmybatis.pojo.VideoVo@771d672e, com.tgr.springbootmybatis.pojo.VideoVo@1eba213c, com.tgr.springbootmybatis.pojo.VideoVo@1f53ddf5, com.tgr.springbootmybatis.pojo.VideoVo@62bf5674, com.tgr.springbootmybatis.pojo.VideoVo@7e87791a, com.tgr.springbootmybatis.pojo.VideoVo@31fb1437, com.tgr.springbootmybatis.pojo.VideoVo@3046db88]
+2020-04-13 14:38:50 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:50 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@120c0b17, com.tgr.springbootmybatis.pojo.VideoVo@786d4b9, com.tgr.springbootmybatis.pojo.VideoVo@73ae486d, com.tgr.springbootmybatis.pojo.VideoVo@6754fec0, com.tgr.springbootmybatis.pojo.VideoVo@1572158e, com.tgr.springbootmybatis.pojo.VideoVo@24602885, com.tgr.springbootmybatis.pojo.VideoVo@258ce144, com.tgr.springbootmybatis.pojo.VideoVo@65eeb9cb, com.tgr.springbootmybatis.pojo.VideoVo@60b51e9d, com.tgr.springbootmybatis.pojo.VideoVo@45b4360e, com.tgr.springbootmybatis.pojo.VideoVo@770793d]
+2020-04-13 14:38:50 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:38:50 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:38:50 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@2be0352e, com.tgr.springbootmybatis.pojo.VideoVo@b3edc2e, com.tgr.springbootmybatis.pojo.VideoVo@357562ec, com.tgr.springbootmybatis.pojo.VideoVo@70845aaf, com.tgr.springbootmybatis.pojo.VideoVo@5a6748d4, com.tgr.springbootmybatis.pojo.VideoVo@27c5301a, com.tgr.springbootmybatis.pojo.VideoVo@3939540c, com.tgr.springbootmybatis.pojo.VideoVo@6bba30a6, com.tgr.springbootmybatis.pojo.VideoVo@bfbf4ed, com.tgr.springbootmybatis.pojo.VideoVo@5b05068, com.tgr.springbootmybatis.pojo.VideoVo@765afde6]
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@58f76527, com.tgr.springbootmybatis.pojo.VideoVo@714c3be8, com.tgr.springbootmybatis.pojo.VideoVo@5da149dc, com.tgr.springbootmybatis.pojo.VideoVo@6d10e433, com.tgr.springbootmybatis.pojo.VideoVo@ead6aeb, com.tgr.springbootmybatis.pojo.VideoVo@1e2e83ad, com.tgr.springbootmybatis.pojo.VideoVo@4916c61d, com.tgr.springbootmybatis.pojo.VideoVo@23cd9270, com.tgr.springbootmybatis.pojo.VideoVo@46525ed0, com.tgr.springbootmybatis.pojo.VideoVo@2c0b8e5c, com.tgr.springbootmybatis.pojo.VideoVo@535283ee]
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@31f15685, com.tgr.springbootmybatis.pojo.VideoVo@15e8a03d, com.tgr.springbootmybatis.pojo.VideoVo@135011cd, com.tgr.springbootmybatis.pojo.VideoVo@27c5567c, com.tgr.springbootmybatis.pojo.VideoVo@1c3b797f, com.tgr.springbootmybatis.pojo.VideoVo@4c82db8d, com.tgr.springbootmybatis.pojo.VideoVo@5f4f75a9, com.tgr.springbootmybatis.pojo.VideoVo@52b4be8a, com.tgr.springbootmybatis.pojo.VideoVo@1583d522, com.tgr.springbootmybatis.pojo.VideoVo@4f873aac, com.tgr.springbootmybatis.pojo.VideoVo@6b41ecc8]
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@5ca3172d, com.tgr.springbootmybatis.pojo.VideoVo@522ea364, com.tgr.springbootmybatis.pojo.VideoVo@3a8315db, com.tgr.springbootmybatis.pojo.VideoVo@56f17dcf, com.tgr.springbootmybatis.pojo.VideoVo@12af1243, com.tgr.springbootmybatis.pojo.VideoVo@35bda6f1, com.tgr.springbootmybatis.pojo.VideoVo@17324050, com.tgr.springbootmybatis.pojo.VideoVo@4af0487c, com.tgr.springbootmybatis.pojo.VideoVo@20a7766b, com.tgr.springbootmybatis.pojo.VideoVo@78f5d6a0, com.tgr.springbootmybatis.pojo.VideoVo@7dc0392e]
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:02 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:02 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@16c61e95, com.tgr.springbootmybatis.pojo.VideoVo@19ca96bc, com.tgr.springbootmybatis.pojo.VideoVo@21c33c45, com.tgr.springbootmybatis.pojo.VideoVo@2a5610ef, com.tgr.springbootmybatis.pojo.VideoVo@c429186, com.tgr.springbootmybatis.pojo.VideoVo@417099c4, com.tgr.springbootmybatis.pojo.VideoVo@7969a4bb, com.tgr.springbootmybatis.pojo.VideoVo@63221211, com.tgr.springbootmybatis.pojo.VideoVo@7bf46152, com.tgr.springbootmybatis.pojo.VideoVo@3e8f7951, com.tgr.springbootmybatis.pojo.VideoVo@af74e47]
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@6ecca639, com.tgr.springbootmybatis.pojo.VideoVo@619f3b07, com.tgr.springbootmybatis.pojo.VideoVo@1f086294, com.tgr.springbootmybatis.pojo.VideoVo@6618d634, com.tgr.springbootmybatis.pojo.VideoVo@6d6e49a0, com.tgr.springbootmybatis.pojo.VideoVo@75311009, com.tgr.springbootmybatis.pojo.VideoVo@29f1d0f9, com.tgr.springbootmybatis.pojo.VideoVo@9f80a85, com.tgr.springbootmybatis.pojo.VideoVo@16447153, com.tgr.springbootmybatis.pojo.VideoVo@6b889aca, com.tgr.springbootmybatis.pojo.VideoVo@4c59f95a]
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@9537b85, com.tgr.springbootmybatis.pojo.VideoVo@3db0bcdd, com.tgr.springbootmybatis.pojo.VideoVo@3ad6deaa, com.tgr.springbootmybatis.pojo.VideoVo@6439024e, com.tgr.springbootmybatis.pojo.VideoVo@76a4c21f, com.tgr.springbootmybatis.pojo.VideoVo@4e4ade42, com.tgr.springbootmybatis.pojo.VideoVo@42657aaf, com.tgr.springbootmybatis.pojo.VideoVo@6e622bdf, com.tgr.springbootmybatis.pojo.VideoVo@3e06a836, com.tgr.springbootmybatis.pojo.VideoVo@26a6c97a, com.tgr.springbootmybatis.pojo.VideoVo@4f7f6f03]
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:03 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:03 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@459e6d11, com.tgr.springbootmybatis.pojo.VideoVo@649404d2, com.tgr.springbootmybatis.pojo.VideoVo@57dc1edb, com.tgr.springbootmybatis.pojo.VideoVo@ed872eb, com.tgr.springbootmybatis.pojo.VideoVo@389860c4, com.tgr.springbootmybatis.pojo.VideoVo@7cee5191, com.tgr.springbootmybatis.pojo.VideoVo@4b73b211, com.tgr.springbootmybatis.pojo.VideoVo@6f1cebe, com.tgr.springbootmybatis.pojo.VideoVo@7d1410e4, com.tgr.springbootmybatis.pojo.VideoVo@7378a40e, com.tgr.springbootmybatis.pojo.VideoVo@25cd734a]
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@66583dbf, com.tgr.springbootmybatis.pojo.VideoVo@240325ad, com.tgr.springbootmybatis.pojo.VideoVo@3d449140, com.tgr.springbootmybatis.pojo.VideoVo@62f0f2b4, com.tgr.springbootmybatis.pojo.VideoVo@45e29e90, com.tgr.springbootmybatis.pojo.VideoVo@7871f5cc, com.tgr.springbootmybatis.pojo.VideoVo@6126b513, com.tgr.springbootmybatis.pojo.VideoVo@4268ed1, com.tgr.springbootmybatis.pojo.VideoVo@556186db, com.tgr.springbootmybatis.pojo.VideoVo@22c9c62e, com.tgr.springbootmybatis.pojo.VideoVo@76136149]
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@65f1a467, com.tgr.springbootmybatis.pojo.VideoVo@70f55abc, com.tgr.springbootmybatis.pojo.VideoVo@54e9880f, com.tgr.springbootmybatis.pojo.VideoVo@75957b2f, com.tgr.springbootmybatis.pojo.VideoVo@1daf3b66, com.tgr.springbootmybatis.pojo.VideoVo@4755b2d5, com.tgr.springbootmybatis.pojo.VideoVo@5fe4e3c0, com.tgr.springbootmybatis.pojo.VideoVo@176a710, com.tgr.springbootmybatis.pojo.VideoVo@65e6c853, com.tgr.springbootmybatis.pojo.VideoVo@fcf1d20, com.tgr.springbootmybatis.pojo.VideoVo@774d15fa]
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[52]: 视频列表Controller
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==>  Preparing: select v.*,e.id eId,e.vid vid,e.name eName from video v left join episode e on v.id = e.vid; 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: ==> Parameters: 
+2020-04-13 14:39:04 DEBUG o.a.i.l.j.BaseJdbcLogger[159]: <==      Total: 18
+2020-04-13 14:39:04 DEBUG c.t.s.c.VideoController[70]: 视频列表Controller[com.tgr.springbootmybatis.pojo.VideoVo@691f1b48, com.tgr.springbootmybatis.pojo.VideoVo@481e6300, com.tgr.springbootmybatis.pojo.VideoVo@7fb6f178, com.tgr.springbootmybatis.pojo.VideoVo@4e728ee0, com.tgr.springbootmybatis.pojo.VideoVo@5fa6193d, com.tgr.springbootmybatis.pojo.VideoVo@641b77aa, com.tgr.springbootmybatis.pojo.VideoVo@2cee6760, com.tgr.springbootmybatis.pojo.VideoVo@7631e993, com.tgr.springbootmybatis.pojo.VideoVo@19316999, com.tgr.springbootmybatis.pojo.VideoVo@26a8fb32, com.tgr.springbootmybatis.pojo.VideoVo@79225de0]
+2020-04-13 14:44:44 INFO c.t.s.f.e.f.AccessFilter[58]: remoteIp----127.0.0.1
+2020-04-13 14:44:44 INFO c.t.s.f.e.f.AccessFilter[59]: url----/export/initExcel
+2020-04-13 14:44:44 INFO i.n.u.i.l.Slf4JLogger[101]: Starting without optional epoll library
+2020-04-13 14:44:44 INFO i.n.u.i.l.Slf4JLogger[101]: Starting without optional kqueue library
+2020-04-13 14:44:44 ERROR o.a.j.l.DirectJDKLog[182]: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:964)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:932)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:785)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:299)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:132)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:95)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:82)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:184)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:95)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:48)
+	at com.tgr.springbootmybatis.file.component.BlackListUtil.onAccessUrlAllowed(BlackListUtil.java:87)
+	at com.tgr.springbootmybatis.file.export.filter.AccessFilter.doFilter(AccessFilter.java:63)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:233)
+	at io.lettuce.core.RedisClient.connectStandalone(RedisClient.java:253)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:202)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:56)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:957)
+	... 46 common frames omitted
+Caused by: io.lettuce.core.RedisCommandExecutionException: ERR Client sent AUTH, but no password is set
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:122)
+	at io.lettuce.core.AbstractRedisAsyncCommands.auth(AbstractRedisAsyncCommands.java:81)
+	at io.lettuce.core.RedisClient.lambda$connectStatefulAsync$2(RedisClient.java:324)
+	at io.lettuce.core.RedisClient$$Lambda$560/460300999.apply(Unknown Source)
+	at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:602)
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:442)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:66)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 common frames omitted
+Caused by: io.lettuce.core.RedisCommandExecutionException: ERR Client sent AUTH, but no password is set
+	at io.lettuce.core.protocol.AsyncCommand.completeResult(AsyncCommand.java:118)
+	at io.lettuce.core.protocol.AsyncCommand.complete(AsyncCommand.java:109)
+	at io.lettuce.core.protocol.CommandHandler.complete(CommandHandler.java:598)
+	at io.lettuce.core.protocol.CommandHandler.decode(CommandHandler.java:556)
+	at io.lettuce.core.protocol.CommandHandler.channelRead(CommandHandler.java:508)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	... 3 common frames omitted

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文件浏览器</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/asserts/layui/css/layui.css}">
+</head>
+<body style="padding-left: 30px; padding-top: 10px;padding-right: 30px;">
+
+<div>
+    <form class="layui-form" onsubmit="return false;">
+        <input type="hidden" id="nginxContextPath" name="nginxContextPath" th:value="${nginxContextPath}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">当前目录：</label>
+            <div class="layui-input-block">
+                <input type="text" id="currentPath" class="layui-input" value="/" lay-filter="currentPath">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input id="intoPath" type="button" th:value="进入目录" class="layui-btn" lay-filter="intoPath">
+                <input id="backPath" type="button" th:value="返回上级" class="layui-btn layui-btn-normal" lay-filter="backPath">
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div>
+    <input type="hidden" id="access" name="access" th:value="${#httpServletRequest.getParameter('access')}">
+    <table id="filesystem" lay-filter="filesystem"></table>
+</div>
+
+<script type="text/javascript" th:src="@{http://code.jquery.com/jquery-1.10.2.min.js}"></script>
+<script th:src="@{/asserts/layui/layui.js}"></script>
+<script th:src="@{/asserts/js/filesystem.js}"></script>
+</body>
+</html>
